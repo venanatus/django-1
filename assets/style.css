@@ -1,0 +1,33 @@
+.navbar-item img {
+    width: 7rem;
+ }
+ 
+ .card {
+    min-height: 600px;
+ }
+ .course {
+   transition: .5s;
+}
+.course:hover {
+   transform: translateY(-3%);
+   transition: .5s;
+}
+.form {
+   padding: 20px;
+   display: block;
+   width: 100%;
+   height: 100%;
+}
+
+.form label {
+   color: black;
+   font-size: 17px;
+   font-weight: bold;
+}
+
+.form input {
+   width: 100%;
+   height: 45px;
+   margin: 10px auto;
+   border: 1px solid #bbb;
+}

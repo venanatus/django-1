@@ -1,0 +1,70 @@
+{% load static from static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Академия Monday - курсы по программированию и дизайну</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<section id="main" class="hero is-primary is-bold is-fullheight">
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="/home" class="navbar-item">
+                        <img src="{% static 'images/monday.svg' %}" alt="Logo">
+                    </a>
+
+                    <span class="navbar-burger burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </div>
+
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                        <a href="#main" class="navbar-item">Главная</a>
+                        <a href="#courses" class="navbar-item">Курсы</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <img src="{% static 'images/header.svg' %}" width="100%" alt="">
+                </div>
+
+                <div class="column is-5-desktop is-offset-1-desktop">
+                    <h1 class="title is-1">
+                        Monday Academy - освой профессию будущего
+                    </h1>
+
+                    <h2 class="subtitle">
+                        Monday Academy - Это возможность стать востребованным специалистом на рынке труда!
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% block content %}
+{% endblock %}
+<footer class="section">
+    <div class="content has-text-centered">
+        <p>
+            <strong><a href="/" class="has-text-dark">Monday Academy</a></strong>
+            Подразделение
+            <a href="https://mondaylabs.tech">OOO "Monday Labs"</a>.<br>
+        </p>
+    </div>
+</footer>
+</body>
+</html>
+

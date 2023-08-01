@@ -1,0 +1,67 @@
+{% extends 'base_layout.html' %}
+{% load static from static %}
+
+{% block content %}
+    <section id="topics" class="section is-medium grey-bg">
+        <div class="container">
+            <div class="has-text-centered">
+                <h2 class="title"><span class="has-text-info">Подробнее</span> о курсе {{ course }}</h2>
+                <p class="subtitle">Наше обучение длится <b>{{ course.duration }}</b> месяцев,
+                    большую часть из которых Вы будете изучать материал на практике, а последний месяц у Вас будет в формате
+                    выпускного проекта, который вы будете разрабатывать в команде. Уроки ведутся 3 раза в неделю через
+                    день.</p>
+                <p class="subtitle">Стоимость курса <b>{{ course.price }}</b> сум. Оплата ежемесячная.</p><br>
+            </div>
+            <div class="columns is-vcentered topic">
+                <div class="column is-5">
+                    <img src="{% static 'images/lesson.svg' %}" alt="">
+                </div>
+                <div class="column is-offset-1">
+                    <h1 class="title is-3 has-text-info">
+                        Описание курса
+                    </h1><br>
+                    <h2 class="subtitle">{{ course.description }}</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="join" class="section is-medium grey-bg">
+        {% if is_success %}
+            <div class="notification is-success is-size-3 has-text-centered">
+                <button class="delete"></button>
+                Ваша заявка принята! Спасибо!
+            </div>
+        {% endif %}
+        <div class="container">
+            <div class="has-text-centered">
+                <h1 class="title is-1">Запишитесь к нам на курсы</h1>
+                <h2 class="subtitle has-text-grey">
+                    Время стать лучше, запишитесь к нам на курсы прямо сейчас
+                </h2>
+            </div>
+            <br><br><br>
+            <div class="columns is-variable is-8 is-vcentered">
+                <div class="column">
+                    <img src="{% static 'images/join.svg' %}" alt="Join illustration">
+                </div>
+
+                <div class="column">
+                    <div class="box">
+                        <form method="post" class="form">
+                            {% csrf_token %}
+                            {{ form }}
+                            <button type="submit" class="button is-primary is-fullwidth">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,71 @@
+{% extends 'base_layout.html' %}
+{% load static from static %}
+
+{% block content %}
+<section class="section is-fullheight">
+    <h2 class="has-text-centered has-text-weight-bold is-size-2 mb-6">Наши курсы</h2>
+    <div class="container">
+        <div class="columns">
+            {% for course in courses %}
+            <div class="column course">
+                <a href="{% url 'landing:about' course.pk %}">
+                    <div class="card">
+                        <div class="card-image pt-4">
+                            <figure class="image ">
+                                <img src="{% static 'images/comp.svg' %}" alt="">
+                            </figure>
+                        </div>
+
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content has-text-centered">
+                                    <p class="title is-4">{{ course.title }}</p>
+                                </div>
+                            </div>
+                            <div class="content">{{ course.description }}</div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="section teachers is-medium">
+    <div class="container">
+        <div class="has-text-centered">
+            <h1 class="title is-2">Наши Наставники</h1>
+            <h2 class="subtitle has-text-grey">Мы собрали лучших специалистов в своей отрасли</h2>
+        </div>
+        <br><br>
+
+        <div class="columns is-centered">
+            {% for teacher in teachers %}
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image">
+                            <img src="{% static 'images/coder.jpg' %}" alt="coder">
+                        </figure>
+                    </div>
+
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content has-text-centered">
+                                <p class="title is-4">{{teacher}}</p>
+                                <p class="subtitle is-6">{{teacher.teaching_course}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+
+
